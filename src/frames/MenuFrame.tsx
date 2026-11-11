@@ -25,10 +25,10 @@ function MenuTable({
 }) {
   return (
     <section aria-label={group.title} className={cn(mobileHidden && "hidden md:block")}>
-      <h3 data-reveal="up" data-step="0.04" className="t-large pb-3 md:pb-[1.05rem] text-[#25272A]">
+      <h3 data-reveal="up" data-step="0.04" className="t-large pb-1.5 md:pb-2 text-[#25272A]">
         {group.title}
       </h3>
-      <ul className="space-y-1">
+      <ul className="space-y-0.5 md:space-y-1">
         {group.items.map((item) => {
           const isPicked = picked === item;
           return (
@@ -40,19 +40,19 @@ function MenuTable({
               onPointerLeave={(e) => e.pointerType === "mouse" && onPick(null)}
               onClick={() => onPick(isPicked ? null : item)}
               className={cn(
-                "group relative flex cursor-pointer items-center justify-between gap-3 px-2.5 py-1.5 rounded-lg transition-all duration-300 ease-out select-none",
+                "group relative flex cursor-pointer items-center justify-between gap-2.5 px-2 py-0.5 md:py-1 rounded-md transition-all duration-300 ease-out select-none",
                 isPicked
-                  ? "bg-[#E5DFD2]/90 shadow-xs translate-x-1.5 border border-[#D8C8AC]"
-                  : "hover:bg-[#E5DFD2]/45 hover:translate-x-1 border border-transparent",
+                  ? "bg-[#E5DFD2]/90 shadow-xs translate-x-1 border border-[#D8C8AC]"
+                  : "hover:bg-[#E5DFD2]/45 hover:translate-x-0.5 border border-transparent",
               )}
             >
               {/* Left active indicator star in warm gold */}
-              <div className="flex items-center gap-2 min-w-0 flex-1">
+              <div className="flex items-center gap-1.5 min-w-0 flex-1">
                 <span
                   className={cn(
-                    "inline-block shrink-0 transition-all duration-300 text-[#EACB83] text-[11px]",
+                    "inline-block shrink-0 transition-all duration-300 text-[#EACB83] text-[10px]",
                     isPicked
-                      ? "opacity-100 scale-100 rotate-0 w-3"
+                      ? "opacity-100 scale-100 rotate-0 w-2.5"
                       : "opacity-0 scale-50 -rotate-45 w-0 overflow-hidden",
                   )}
                   aria-hidden
@@ -65,8 +65,8 @@ function MenuTable({
                     className={cn(
                       "t-h4 block transition-all duration-300 origin-left tracking-wide",
                       isPicked
-                        ? "text-[1.12rem] font-semibold text-[#25272A] scale-[1.03]"
-                        : "text-[1rem] text-[#25272A]/90 group-hover:text-[#25272A] group-hover:scale-[1.015]",
+                        ? "text-[0.98rem] md:text-[1.04rem] font-semibold text-[#25272A] scale-[1.01]"
+                        : "text-[0.85rem] md:text-[0.9rem] text-[#25272A]/90 group-hover:text-[#25272A]",
                     )}
                   >
                     {item.name}
@@ -74,7 +74,7 @@ function MenuTable({
                   {item.note && (
                     <span
                       className={cn(
-                        "t-note block max-w-[17rem] pt-[1px] transition-colors duration-300",
+                        "t-note block max-w-[17rem] pt-[0.5px] text-[10.5px] leading-[1.2] transition-colors duration-300",
                         isPicked ? "text-[#526044] font-medium" : "text-[#526044]/80",
                       )}
                     >
@@ -87,7 +87,7 @@ function MenuTable({
               {/* Connecting leader line on hover */}
               <span
                 className={cn(
-                  "hidden sm:block flex-1 border-b border-dashed transition-all duration-300 mx-2",
+                  "hidden sm:block flex-1 border-b border-dashed transition-all duration-300 mx-1.5",
                   isPicked
                     ? "border-[#C5B397] opacity-80"
                     : "border-transparent opacity-0 group-hover:border-[#D8C8AC]/60 group-hover:opacity-40",
@@ -98,10 +98,10 @@ function MenuTable({
               {/* Price Tag with custom badge design on hover */}
               <span
                 className={cn(
-                  "t-price shrink-0 transition-all duration-300 font-mono tracking-tight",
+                  "t-price shrink-0 transition-all duration-300 font-mono tracking-tight text-[0.88rem] md:text-[0.94rem]",
                   isPicked
-                    ? "scale-110 bg-[#25272A] text-[#EACB83] px-2.5 py-0.5 rounded-sm shadow-xs font-bold text-[1.05rem]"
-                    : "text-[#25272A] group-hover:text-[#526044] group-hover:scale-105",
+                    ? "scale-105 bg-[#25272A] text-[#EACB83] px-2 py-0.5 rounded-sm shadow-xs font-bold"
+                    : "text-[#25272A] group-hover:text-[#526044]",
                 )}
               >
                 {item.price}
@@ -145,7 +145,7 @@ export function MenuFrame() {
   const gallery = (
     <div
       data-reveal={desktop ? "clip-down" : "clip-up"}
-      className="relative min-h-0 flex-1 overflow-hidden md:mt-5 md:max-h-[36vw]"
+      className="relative min-h-0 flex-1 overflow-hidden md:mt-4 md:max-h-[30vw] lg:max-h-[25vw]"
     >
       <div data-media className="absolute inset-0">
         {FALL_PHOTOS.map((photo, i) => (
@@ -173,8 +173,8 @@ export function MenuFrame() {
   );
 
   return (
-    <div className="px-gutter pt-nav flex h-full min-h-[560px] flex-col">
-      <div className="grid-24 min-h-0 flex-1 grid-rows-[auto_auto_auto_minmax(0,1fr)] gap-y-4 pt-3 md:grid-rows-1 md:pt-[2.4vh]">
+    <div className="px-gutter pt-nav flex min-h-full flex-col justify-between">
+      <div className="grid-24 min-h-0 flex-1 grid-rows-[auto_auto_auto_minmax(0,1fr)] gap-y-3 pt-2 md:grid-rows-1 md:pt-[2vh]">
         {/* introduction (+ photo on desktop) */}
         <div className="col-span-24 flex min-h-0 flex-col md:col-span-6 lg:col-span-7">
           <h2 className="t-h2">
@@ -212,7 +212,7 @@ export function MenuFrame() {
         </div>
 
         {/* the four lists */}
-        <div className="col-span-24 grid content-start gap-x-[9%] gap-y-[4.2vh] md:col-span-17 md:col-start-8 md:grid-cols-2 lg:col-span-14 lg:col-start-10 lg:gap-x-[14%]">
+        <div className="col-span-24 grid content-start gap-x-[8%] gap-y-3 md:gap-y-[2vh] lg:gap-y-[2.6vh] md:col-span-17 md:col-start-8 md:grid-cols-2 lg:col-span-14 lg:col-start-10 lg:gap-x-[12%]">
           {GRID_ORDER.map((gi) => (
             <MenuTable key={MENU[gi].title} group={MENU[gi]} mobileHidden={gi !== tab} picked={picked} onPick={setPicked} />
           ))}
@@ -225,9 +225,9 @@ export function MenuFrame() {
       </div>
 
       {/* the tray sits on the end of the rule, as it does on the original */}
-      <div className="relative shrink-0 pb-5 pt-2 md:pb-7">
-        <div className="flex items-end justify-end gap-3 md:gap-5">
-          <p data-reveal="fade" aria-live="polite" className="t-tiny max-w-[62%] pb-[22px] text-right">
+      <div className="relative shrink-0 mt-auto pt-3 pb-4 md:pb-6">
+        <div className="flex items-end justify-end gap-3 md:gap-4">
+          <p data-reveal="fade" aria-live="polite" className="t-tiny max-w-[50%] pb-1 md:pb-2 text-right">
             {picked ? (
               <span key={picked.name} className="fade-up inline-block text-[#526044] font-semibold text-[13px] tracking-wide">
                 {picked.name} — {picked.price} →
@@ -236,10 +236,10 @@ export function MenuFrame() {
               <span className="opacity-70">{desktop ? "Point or hover" : "Tap"} a drink and watch it pour →</span>
             )}
           </p>
-          <div data-reveal="zoom" className="relative z-10 -mb-[16px] shrink-0">
+          <div data-reveal="zoom" className="relative z-10 -mb-[12px] shrink-0">
             <DrinkTray
               level={picked ? picked.pour : 0.15}
-              className="h-auto w-[clamp(118px,13.5vw,200px)] text-flora"
+              className="h-auto w-[clamp(90px,9.5vw,135px)] text-flora"
             />
           </div>
         </div>
