@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <title>Snap Café | SIP HAPPENS! — Coffee, Conversation &amp; Good Vibes</title>
+    <meta
+      name="description"
+      content="Snap Café — SIP HAPPENS! Thoughtfully crafted coffee, ceremonial matcha, cozy conversations and good vibes in our minimalist cream, champagne & warm gold space."
+    />
+    <meta name="theme-color" content="#F0EDE4" />
+    <link
+      rel="icon"
+      href="https://images.squarespace-cdn.com/content/v1/6a15e6486d12f2496c6ef78c/da3c4370-9dcd-44e0-b7ed-46abc531e62f/favicon.ico"
+    />
+
+    <!-- Warm up the only two origins the page talks to -->
+    <link rel="preconnect" href="https://images.squarespace-cdn.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+
+    <!-- LCP image: first hero slide, responsive, discovered before any script runs.
+         Must stay in sync with srcSet()/sizes used by <Img> in HeroFrame. -->
+    <link
+      rel="preload"
+      as="image"
+      fetchpriority="high"
+      href="https://images.squarespace-cdn.com/content/v1/6a15e6486d12f2496c6ef78c/f61725a0-5d15-4595-908d-8ede35ecfa72/iced-latte-matcha-pour-flora-cafe-cups.jpg?format=1000w"
+      imagesrcset="
+        https://images.squarespace-cdn.com/content/v1/6a15e6486d12f2496c6ef78c/f61725a0-5d15-4595-908d-8ede35ecfa72/iced-latte-matcha-pour-flora-cafe-cups.jpg?format=300w 300w,
+        https://images.squarespace-cdn.com/content/v1/6a15e6486d12f2496c6ef78c/f61725a0-5d15-4595-908d-8ede35ecfa72/iced-latte-matcha-pour-flora-cafe-cups.jpg?format=500w 500w,
+        https://images.squarespace-cdn.com/content/v1/6a15e6486d12f2496c6ef78c/f61725a0-5d15-4595-908d-8ede35ecfa72/iced-latte-matcha-pour-flora-cafe-cups.jpg?format=750w 750w,
+        https://images.squarespace-cdn.com/content/v1/6a15e6486d12f2496c6ef78c/f61725a0-5d15-4595-908d-8ede35ecfa72/iced-latte-matcha-pour-flora-cafe-cups.jpg?format=1000w 1000w,
+        https://images.squarespace-cdn.com/content/v1/6a15e6486d12f2496c6ef78c/f61725a0-5d15-4595-908d-8ede35ecfa72/iced-latte-matcha-pour-flora-cafe-cups.jpg?format=1500w 1500w,
+        https://images.squarespace-cdn.com/content/v1/6a15e6486d12f2496c6ef78c/f61725a0-5d15-4595-908d-8ede35ecfa72/iced-latte-matcha-pour-flora-cafe-cups.jpg?format=2500w 2500w
+      "
+      imagesizes="(min-width: 768px) calc(100vw - 64px), calc(100vw - 48px)"
+    />
+
+    <!-- Fonts never block first paint: swap in when ready -->
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Courier+Prime&family=Inter:wght@400;500;600&family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&display=swap"
+      media="print"
+      onload="this.media='all'"
+    />
+    <noscript>
+      <link
+        rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Courier+Prime&family=Inter:wght@400;500;600&family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&display=swap"
+      />
+    </noscript>
+
+    <style>
+      html,
+      body {
+        background: #F0EDE4;
+        color: #25272A;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
